@@ -18,7 +18,7 @@ namespace Unic.Bob.Scrambler.Core.PipelineProcessors
             var options = new LoadOptions();
             options.DisableEvents = true;
             Manager.LoadTree(PathUtils.Root, options);
-            context.Response.Write("<pre>Updated database.</pre>");
+            context.Response.Write("Updated database.");
         }
     }
 }

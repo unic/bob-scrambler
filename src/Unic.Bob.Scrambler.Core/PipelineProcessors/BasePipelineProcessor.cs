@@ -32,6 +32,7 @@
                 {
                     using (new SecurityDisabler())
                     {
+                        args.Context.Response.ContentType = "text/plain";
                         ProcessRequest(args.Context);
                     }
                 }
