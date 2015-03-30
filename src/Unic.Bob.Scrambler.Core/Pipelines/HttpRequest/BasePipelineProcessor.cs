@@ -16,7 +16,7 @@
         private readonly string activationUrl;
 
         /// <summary>
-        /// Initializes a new instace of the <see cref="BasePipelineProcessor" /> class.
+        /// Initializes a new instance of the <see cref="BasePipelineProcessor" /> class.
         /// </summary>
         /// <param name="activationUrl">The url where the pipline processor responds to. "/bob/" will always be prefixed to the passed url.</param>
         protected BasePipelineProcessor(string activationUrl)
