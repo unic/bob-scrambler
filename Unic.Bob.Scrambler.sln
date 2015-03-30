@@ -7,10 +7,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unic.Bob.Scrambler.Website"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unic.Bob.Scrambler.Core", "src\Unic.Bob.Scrambler.Core\Unic.Bob.Scrambler.Core.csproj", "{080F3435-E835-4CBC-9787-D5D42C3A11BD}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{714974D6-9BE3-4C0F-AE7F-FDBA06566072}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unic.Bob.Scrambler.Core.Tests", "tests\Unic.Bob.Scrambler.Core.Tests\Unic.Bob.Scrambler.Core.Tests.csproj", "{C659DB5F-D86E-4517-9E66-2D23E0E35AA3}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{BF7785F1-B33C-4C86-8C79-FEB6FB78380F}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\packages.config = .nuget\packages.config
@@ -30,16 +26,8 @@ Global
 		{080F3435-E835-4CBC-9787-D5D42C3A11BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{080F3435-E835-4CBC-9787-D5D42C3A11BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{080F3435-E835-4CBC-9787-D5D42C3A11BD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C659DB5F-D86E-4517-9E66-2D23E0E35AA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C659DB5F-D86E-4517-9E66-2D23E0E35AA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C659DB5F-D86E-4517-9E66-2D23E0E35AA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C659DB5F-D86E-4517-9E66-2D23E0E35AA3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{C659DB5F-D86E-4517-9E66-2D23E0E35AA3} = {714974D6-9BE3-4C0F-AE7F-FDBA06566072}
-	EndGlobalSection
 EndGlobal
-
