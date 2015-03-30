@@ -1,13 +1,12 @@
-﻿namespace Unic.Bob.Scrambler.Core.PipelineProcessors
+﻿namespace Unic.Bob.Scrambler.Core.Pipelines.HttpRequest
 {
     using System;
+    using System.Configuration;
     using System.Web;
 
-    using Sitecore.Data.Serialization;
     using Sitecore.Pipelines.HttpRequest;
+    using Sitecore.Security.Authentication;
     using Sitecore.SecurityModel;
-
-    using SecurityState = Unic.Bob.Scrambler.Core.Security.SecurityState;
 
     public abstract class BasePipelineProcessor : HttpRequestProcessor
     {
@@ -28,12 +27,12 @@
             {
                 context.Server.ScriptTimeout = 86400;
 
-                if (new SecurityState().IsAllowed)
+                if (this.IsUserAllowed())
                 {
                     using (new SecurityDisabler())
                     {
                         args.Context.Response.ContentType = "text/plain";
-                        ProcessRequest(args.Context);
+                        this.ProcessRequest(args.Context);
                     }
                 }
                 else
@@ -47,8 +46,30 @@
                     context.Response.TrySkipIisCustomErrors = true;
                     context.Response.StatusCode = 401;
                 }
+
                 args.Context.Response.End();
             }
+        }
+
+        protected virtual bool IsUserAllowed()
+        {
+            var user = AuthenticationManager.GetActiveUser();
+
+            if (user.IsAdministrator)
+            {
+                return true;
+            }
+            
+            var authToken = HttpContext.Current.Request.Headers["Authenticate"];
+            var correctAuthToken = ConfigurationManager.AppSettings["DeploymentToolAuthToken"];
+
+            if (!string.IsNullOrWhiteSpace(correctAuthToken) && !string.IsNullOrWhiteSpace(authToken)
+                && authToken.Equals(correctAuthToken, StringComparison.Ordinal))
+            {
+                return true;
+            }
+            
+            return false;
         }
 
         protected abstract void ProcessRequest(HttpContext context);

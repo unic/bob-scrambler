@@ -46,10 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="PipelineProcessors\BasePipelineProcessor.cs" />
+    <Compile Include="Pipelines\HttpRequest\BasePipelineProcessor.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Security\SecurityState.cs" />
-    <Compile Include="PipelineProcessors\UpdateDatabase.cs" />
+    <Compile Include="Pipelines\HttpRequest\UpdateDatabase.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

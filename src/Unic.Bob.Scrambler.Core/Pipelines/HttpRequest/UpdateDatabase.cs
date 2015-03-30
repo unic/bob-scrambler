@@ -1,8 +1,7 @@
-﻿
-
-namespace Unic.Bob.Scrambler.Core.PipelineProcessors
+﻿namespace Unic.Bob.Scrambler.Core.Pipelines.HttpRequest
 {
     using System.Web;
+
     using Sitecore.Data.Serialization;
 
     public class UpdateDatabase : BasePipelineProcessor
@@ -11,7 +10,6 @@ namespace Unic.Bob.Scrambler.Core.PipelineProcessors
             : base(activationUrl)
         {
         }
-
 
         protected override void ProcessRequest(HttpContext context)
         {
