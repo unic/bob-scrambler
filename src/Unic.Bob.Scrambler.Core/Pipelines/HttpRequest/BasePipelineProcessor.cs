@@ -8,15 +8,26 @@
     using Sitecore.Security.Authentication;
     using Sitecore.SecurityModel;
 
+    /// <summary>
+    /// A base pipeline processor for actions which can only be done by admins.
+    /// </summary>
     public abstract class BasePipelineProcessor : HttpRequestProcessor
     {
         private readonly string activationUrl;
 
+        /// <summary>
+        /// Initializes a new instace of the <see cref="BasePipelineProcessor" /> class.
+        /// </summary>
+        /// <param name="activationUrl">The url where the pipline processor responds to. "/bob/" will always be prefixed to the passed url.</param>
         protected BasePipelineProcessor(string activationUrl)
         {
             this.activationUrl = "/bob/" + activationUrl;
         }
 
+        /// <summary>
+        /// Processes the HTTP request.
+        /// </summary>
+        /// <param name="args">The arguments.</param>
         public override void Process(HttpRequestArgs args)
         {
             if (string.IsNullOrWhiteSpace(this.activationUrl)) return;
@@ -51,6 +62,11 @@
             }
         }
 
+        /// <summary>
+        /// Checks if the user is allowed to perform admin actions.
+        /// This is true if the logged in user is an adminstrator or if the Authenticate-header is valid.
+        /// </summary>
+        /// <returns>True if the user is allowed to perform admin actions, else false.</returns>
         protected virtual bool IsUserAllowed()
         {
             var user = AuthenticationManager.GetActiveUser();
@@ -72,6 +88,10 @@
             return false;
         }
 
+        /// <summary>
+        /// Process a HTTP request, if the current request matches the url definied by the child pipeline processor.
+        /// </summary>
+        /// <param name="context">The HTTP context.</param>
         protected abstract void ProcessRequest(HttpContext context);
     }
 }
