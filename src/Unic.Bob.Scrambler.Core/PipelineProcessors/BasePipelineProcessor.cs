@@ -11,7 +11,7 @@
 
     public abstract class BasePipelineProcessor : HttpRequestProcessor
     {
-        protected string activationUrl;
+        private readonly string activationUrl;
 
         protected BasePipelineProcessor(string activationUrl)
         {
@@ -28,22 +28,11 @@
             {
                 context.Server.ScriptTimeout = 86400;
 
-                var security = new SecurityState();
-
-                if (security.IsAllowed)
+                if (new SecurityState().IsAllowed)
                 {
-                    try
+                    using (new SecurityDisabler())
                     {
-                        using (new SecurityDisabler())
-                        {
-                            ProcessRequest(args.Context);
-                        }
-                    }
-                    catch (Exception ex)
-                    {
-                        context.Response.Write("Could not update database: " + ex.Message);
-                        context.Response.StatusCode = 500;
-                        context.Response.TrySkipIisCustomErrors = true;
+                        ProcessRequest(args.Context);
                     }
                 }
                 else
@@ -51,7 +40,7 @@
                     context.Response.Write("<h4>Access Denied</h4>");
                     context.Response.Write(
                         string.Format(
-                            "<p>You need to <a href=\"/sitecore/admin/login.aspx?ReturnUrl={0}\">sign in to Sitecore as an administrator</a> to use the Unicorn control panel.</p>",
+                            "<p>You need to <a href=\"/sitecore/admin/login.aspx?ReturnUrl={0}\">sign in to Sitecore as an administrator</a> to use the Bob Scrambler tools.</p>",
                             HttpUtility.UrlEncode(HttpContext.Current.Request.Url.PathAndQuery)));
 
                     context.Response.TrySkipIisCustomErrors = true;
