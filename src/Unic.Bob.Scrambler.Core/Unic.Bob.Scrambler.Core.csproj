@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Pipelines\HttpRequest\BasePipelineProcessor.cs" />
+    <Compile Include="Pipelines\HttpRequest\FullPublish.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Pipelines\HttpRequest\UpdateDatabase.cs" />
   </ItemGroup>
