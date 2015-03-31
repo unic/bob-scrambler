@@ -1,0 +1,17 @@
+﻿<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Unic.Bob.Scrambler</id>
+    <version>$VERSION$</version>
+    <authors>Unic AG</authors>
+    <owners>Unic</owners>
+    <iconUrl>https://www.unic.com/img/unic-logo.jpg</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Unic Bob.Scrambler</description>
+    <copyright>Copyright 2015 Unic AG</copyright>
+    <dependencies>
+        <dependency id="Unic.Bob.Scrambler.Core" version="$NuGetVersion$" />
+    </dependencies>
+  </metadata>
+</package>
+
