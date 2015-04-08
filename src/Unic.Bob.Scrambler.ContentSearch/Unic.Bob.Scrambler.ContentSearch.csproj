@@ -74,7 +74,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Config\Bob.config" />
-    <Content Include="App_Config\Include\Unic.Bob.Scrambler.ContentSerach.config" />
+    <Content Include="App_Config\Include\Unic.Bob.Scrambler.ContentSearch.config" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
