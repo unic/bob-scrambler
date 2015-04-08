@@ -66,14 +66,14 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Bob.config.user" />
+    <None Include="App_Config\Bob.config.user" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Pipelines\HttpRequest\RebuildContentSearchIndex.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Config\Bob.config" />
+    <None Include="App_Config\Bob.config" />
     <Content Include="App_Config\Include\Unic.Bob.Scrambler.ContentSearch.config" />
   </ItemGroup>
   <ItemGroup>
