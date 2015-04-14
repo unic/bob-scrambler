@@ -49,6 +49,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Pipelines\HttpRequest\BasePipelineProcessor.cs" />
+    <Compile Include="Pipelines\HttpRequest\EnableIndexing.cs" />
+    <Compile Include="Pipelines\HttpRequest\DisableIndexing.cs" />
     <Compile Include="Pipelines\HttpRequest\FullPublish.cs" />
     <Compile Include="Pipelines\HttpRequest\RebuildIndex.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -43,10 +43,11 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Sitecore.ContentSearch">
       <HintPath>..\..\packages\Sitecore.ContentSearch.7.2.140526.49\lib\Sitecore.ContentSearch.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="Sitecore.Kernel">
       <HintPath>..\..\packages\Sitecore.Kernel.7.2.140526.49\lib\Sitecore.Kernel.dll</HintPath>
-      <Private>True</Private>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
