@@ -4,6 +4,10 @@
 
     public class ReEnableIndexing : BasePipelineProcessor
     {
+        /// <summary>
+        /// When Sitecore is starting this is set to the original value configured in the settings file.
+        /// So when the service is called we only reenable indexing, if it was set to true. 
+        /// </summary>
         public static bool OrignalIndexingEnabled = Sitecore.Configuration.Settings.Indexing.Enabled;
 
         public ReEnableIndexing(string activationUrl)
