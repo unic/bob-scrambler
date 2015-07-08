@@ -31,7 +31,7 @@
             MembershipUser  user = Membership.GetUser("sitecore\\admin", true);
             var resetPassword = user.ResetPassword();
             user.ChangePassword(resetPassword, "b");
-            context.Response.Write("Reseted admin password.");
+            context.Response.Write("Admin password reset");
         }
     }
 }
