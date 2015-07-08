@@ -16,3 +16,4 @@ Scrambler provides different API Endpoints, which are documented here.
 | --- | --- |
 | /bob/updateDatabase | Performs an "update database". This means that all serialized items from the default location, not existing in the database will be added.  |
 | /bob/updateIndex | _Not yet implemented_ |
+| /bob/resetAdmin | Resets the password of the admin user to "b" |
