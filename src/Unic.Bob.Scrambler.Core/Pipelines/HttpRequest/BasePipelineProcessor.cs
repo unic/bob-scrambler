@@ -75,12 +75,8 @@
             {
                 return true;
             }
-            
-            var authToken = HttpContext.Current.Request.Headers["Authenticate"];
-            var correctAuthToken = ConfigurationManager.AppSettings["DeploymentToolAuthToken"];
 
-            if (!string.IsNullOrWhiteSpace(correctAuthToken) && !string.IsNullOrWhiteSpace(authToken)
-                && authToken.Equals(correctAuthToken, StringComparison.Ordinal))
+            if (HttpContext.Current.Request.IsLocal)
             {
                 return true;
             }
