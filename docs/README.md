@@ -5,7 +5,7 @@ Scrambler provides web-services which can be called via PowerShell to
 perform actions inside Sitecore.
 
 ## Installation
-To install Scrambler simply install one off these packages:
+To install Scrambler simply install one of these packages:
 If you are using Sitecore 7.1 or lower use **Unic.Bob.Scrambler.Core**,
 if you are using Sitecore 7.2 or higher use **Unic.Bob.Scrambler.ContentSearch**.
 
