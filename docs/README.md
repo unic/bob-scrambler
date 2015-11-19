@@ -25,3 +25,33 @@ Scrambler provides different API Endpoints, which are documented here.
 | /bob/disableIndexing | Disables indexing of Sitecore items. |
 | /bob/reEnableIndexing | Enable indexing of Sitecore items, but only if it was already enabled when Sitecore started. |
 | /bob/resetAdmin | Resets the password of the admin user to "b" |
+
+## Configuration
+Scrambler relies on some default configurations made by Sitecore normally.
+However this could be patched by projects needs and therefore be different than expected.
+If the following settings have been changed, it must be either patched only for non-local
+environments or you have to patch it back for local systems. Therefore apply the provided
+patching in you _web.local.config_.
+
+### Membership password requirements
+* **Endpoint:** /bob/resetAdmin
+* **patch for _web.local.config_**
+```xml
+<system.web>
+    <membership defaultProvider="sitecore">
+      <providers>
+        <add xdt:Transform="Replace"
+             xdt:Locator="XPath(//membership[@defaultProvider='sitecore']/providers/add[@name='sql'])"
+             name="sql"
+             type="System.Web.Security.SqlMembershipProvider"
+             connectionStringName="core"
+             applicationName="sitecore"
+             minRequiredPasswordLength="1"
+             minRequiredNonalphanumericCharacters="0"
+             requiresQuestionAndAnswer="false"
+             requiresUniqueEmail="false"
+             maxInvalidPasswordAttempts="256" />
+      </providers>
+    </membership>
+</system.web>
+```

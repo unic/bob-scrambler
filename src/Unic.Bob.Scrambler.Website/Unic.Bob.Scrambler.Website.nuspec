@@ -13,5 +13,7 @@
         <dependency id="Unic.Bob.Scrambler.Core" version="$NuGetVersion$" />
     </dependencies>
   </metadata>
+  <files>
+    <file src="..\..\docs\nuget\readme.txt" target="readme.txt" />
+  </files>
 </package>
-
