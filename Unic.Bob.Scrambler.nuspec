@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Unic.Bob.Scrambler</id>
+    <authors>Unic AG</authors>
+    <version>$VERSION$</version>
+    <owners>Unic AG</owners>
+    <iconUrl>https://github.com/unic/unic/raw/master/unic_nuget.png</iconUrl>
+    <projectUrl>https://github.com/unic/bob-scrambler</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Bob's deployment tools</description>
+  </metadata>
+  <files>
+    <file src="src\**" />
+    <file src="packages\**" target="tools" exclude="**\package\services\metadata\core-properties\**;**[Content_Types].xml;**\_rels\**;**\Unic.Bob.Keith\**;**\pester\**" />
+    <file src="tools\**" target="tools" />
+  </files>
+</package>
