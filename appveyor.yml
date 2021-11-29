@@ -39,7 +39,7 @@ after_build:
   - cmd: nuget pack .\src\Unic.Bob.Scrambler.Website\Unic.Bob.Scrambler.Website.csproj -version "%GitVersion_NuGetVersionV2%" -prop "target=%CONFIGURATION%"
   - cmd: appveyor PushArtifact "Unic.Bob.Scrambler.%GitVersion_NuGetVersionV2%.nupkg"
 
-  - cmd: nuget pack .\src\Unic.Bob.Scrambler.Core\Unic.Bob.Scrambler.Core.csproj.csproj -version "%GitVersion_NuGetVersionV2%" -prop "target=%CONFIGURATION%"
+  - cmd: nuget pack .\src\Unic.Bob.Scrambler.Core\Unic.Bob.Scrambler.Core.csproj -version "%GitVersion_NuGetVersionV2%" -prop "target=%CONFIGURATION%"
   - cmd: appveyor PushArtifact "Unic.Bob.Scrambler.Core.%GitVersion_NuGetVersionV2%.nupkg"
   
   - cmd: nuget pack .\src\Unic.Bob.Scrambler.ContentSearch\Unic.Bob.Scrambler.ContentSearch.csproj -version "%GitVersion_NuGetVersionV2%" -prop "target=%CONFIGURATION%"
