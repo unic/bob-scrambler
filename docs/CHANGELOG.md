@@ -1,5 +1,9 @@
 # Changelog
 
+## 2.2
+* Setup AppVeyor build process
+* Create proper NuGet packages for distribution
+
 ## 2.1
 * Add gitversion config to support main branch
 
