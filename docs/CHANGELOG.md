@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.0
+* Initial release on GH
+
 ## 1.2
 * Updated the theme
 
