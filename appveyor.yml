@@ -35,24 +35,20 @@ before_build:
 build:
   verbosity: normal
 
-build_script:
+after_build:
+  - cmd: nuget pack .\src\Unic.Bob.Scrambler.Website\Unic.Bob.Scrambler.Website.csproj -version "%GitVersion_NuGetVersionV2%" -prop "target=%CONFIGURATION%"
+  - cmd: appveyor PushArtifact "Unic.Bob.Scrambler.Website.%GitVersion_NuGetVersionV2%.nupkg"
+
+  - cmd: nuget pack .\src\Unic.Bob.Scrambler.Core\Unic.Bob.Scrambler.Core.csproj.csproj -version "%GitVersion_NuGetVersionV2%" -prop "target=%CONFIGURATION%"
+  - cmd: appveyor PushArtifact "Unic.Bob.Scrambler.Core.%GitVersion_NuGetVersionV2%.nupkg"
+  
+  - cmd: nuget pack .\src\Unic.Bob.Scrambler.ContentSearch\Unic.Bob.Scrambler.ContentSearch.csproj -version "%GitVersion_NuGetVersionV2%" -prop "target=%CONFIGURATION%"
+  - cmd: appveyor PushArtifact "Unic.Bob.Scrambler.ContentSearch.%GitVersion_NuGetVersionV2%.nupkg"
+  
   - ps: |
       $ErrorActionPreference = 'Stop';
       #.\generateDocs.ps1
       #if ($LastExitCode -ne 0) {$host.SetShouldExit($LastExitCode)}
-
-after_build:
-  - cmd: ECHO nuget pack .\src\Unic.Bob.Scrambler.Website\Unic.Bob.Scrambler.Website.csproj -version "%GitVersion_NuGetVersionV2%" -prop "target=%CONFIGURATION%"
-  - cmd: nuget pack .\src\Unic.Bob.Scrambler.Website\Unic.Bob.Scrambler.Website.csproj -version "%GitVersion_NuGetVersionV2%" -prop "target=%CONFIGURATION%"
-  - cmd: appveyor PushArtifact "Unic.Bob.Scrambler.Website.%GitVersion_NuGetVersionV2%.nupkg"
-
-  - cmd: ECHO nuget pack .\src\Unic.Bob.Scrambler.Core\Unic.Bob.Scrambler.Core.csproj.csproj -version "%GitVersion_NuGetVersionV2%" -prop "target=%CONFIGURATION%"
-  - cmd: nuget pack .\src\Unic.Bob.Scrambler.Core\Unic.Bob.Scrambler.Core.csproj.csproj -version "%GitVersion_NuGetVersionV2%" -prop "target=%CONFIGURATION%"
-  - cmd: appveyor PushArtifact "Unic.Bob.Scrambler.Core.%GitVersion_NuGetVersionV2%.nupkg"
-  
-  - cmd: ECHO nuget pack .\src\Unic.Bob.Scrambler.ContentSearch\Unic.Bob.Scrambler.ContentSearch.csproj -version "%GitVersion_NuGetVersionV2%" -prop "target=%CONFIGURATION%"
-  - cmd: nuget pack .\src\Unic.Bob.Scrambler.ContentSearch\Unic.Bob.Scrambler.ContentSearch.csproj -version "%GitVersion_NuGetVersionV2%" -prop "target=%CONFIGURATION%"
-  - cmd: appveyor PushArtifact "Unic.Bob.Scrambler.ContentSearch.%GitVersion_NuGetVersionV2%.nupkg"
 
 deploy_script:
   - ps: |
