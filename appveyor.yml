@@ -54,7 +54,7 @@ deploy:
   - provider: Environment
     name: NuGet.org
     on:
-      branch: master
+      branch: main
   - provider: Environment
     name: NuGet.org
     on:
