@@ -212,3 +212,6 @@ deploy.txt
 # Sitecore Rocks Settings
 *.sitecore
 
+out
+paket.exe
+docs-generated
