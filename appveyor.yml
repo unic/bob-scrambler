@@ -47,16 +47,14 @@ after_build:
   
   - ps: |
       $ErrorActionPreference = 'Stop';
-      #.\generateDocs.ps1
-      #if ($LastExitCode -ne 0) {$host.SetShouldExit($LastExitCode)}
+      .\generateDocs.ps1
+      if ($LastExitCode -ne 0) {$host.SetShouldExit($LastExitCode)}
 
 deploy_script:
   - ps: |
       $ErrorActionPreference = 'Stop';
-      if($env:appveyor_repo_tag -eq 'true') {
-        Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:GithubAccessTokenTeamUnic):x-oauth-basic@github.com`n";
-        .\pushDocs.ps1 $env:APPVEYOR_BUILD_FOLDER docs-generated\_book https://github.com/unic/$($env:RepoName).git
-      }
+      Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:GithubAccessTokenTeamUnic):x-oauth-basic@github.com`n";
+      .\pushDocs.ps1 $env:APPVEYOR_BUILD_FOLDER docs-generated\_book https://github.com/unic/$($env:RepoName).git      
 deploy:
   - provider: Environment
     name: NuGet.org
