@@ -215,3 +215,4 @@ deploy.txt
 out
 paket.exe
 docs-generated
+.vs/
