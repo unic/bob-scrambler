@@ -1,5 +1,8 @@
 # Changelog
 
+## 2.1
+* Add gitversion config to support main branch
+
 ## 2.0
 * Initial release on GH
 
