@@ -1,5 +1,0 @@
-source https://api.nuget.org/v3/index.json
-
-nuget Pester
-nuget Unic.Bob.Rubble
-nuget Unic.Bob.Keith

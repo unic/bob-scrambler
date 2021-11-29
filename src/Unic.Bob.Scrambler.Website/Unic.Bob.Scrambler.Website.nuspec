@@ -10,7 +10,7 @@
     <description>Unic Bob.Scrambler</description>
     <copyright>Copyright 2015 Unic AG</copyright>
     <dependencies>
-        <dependency id="Unic.Bob.Scrambler.Core" version="$NuGetVersion$" />
+        <dependency id="Unic.Bob.Scrambler.Core" version="$VERSION$" />
     </dependencies>
   </metadata>
   <files>
