@@ -36,7 +36,6 @@ build:
   verbosity: normal
 
 build_script:
-  - cmd: nuget pack %Nuspec_File% -version "%GitVersion_NuGetVersionV2%" -OutputDirectory %Artefact_Output_Dir% -NoPackageAnalysis
   - ps: |
       $ErrorActionPreference = 'Stop';
       #.\generateDocs.ps1
