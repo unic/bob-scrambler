@@ -1,5 +1,11 @@
 # Changelog
 
+## 2.0
+* Initial release on GH
+
+## 1.2
+* Updated the theme
+
 ### 1.1.1
 * updated documentation on how to patch scrambler in projects including a 
   readme.txt in the NuGet
